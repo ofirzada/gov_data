@@ -1,11 +1,12 @@
 print("hello")
 import pandas as pd
 
-df= pd.DataFrame()
+import asyncio
+import time
 
 
-dict = {'First Name': 'Vikram', 'Last Name': 'Aruchamy', 'Country': 'India'}
-
-df = df.append(dict, ignore_index = True)
-
-print(df)
+def main():
+    levels =[1,2,4,5]
+    levels=levels+[7,8]
+    print(levels)
+main()
