@@ -39,7 +39,7 @@ async def get_subjects(subject, level):
 
 async def show_data():
     data_json = await get_data_from_subject(12, 3)
-    print(data_json)
+
     # show(*list(map(lambda item:item['df'],data_json)))
 
 # asyncio.run(show_data())

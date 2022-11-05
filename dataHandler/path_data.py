@@ -15,12 +15,17 @@ async def gov_data_to_df(fatch_data):
 
     df2=get_path_data_into_col(df=subject_df)
     df3=get_reduce_data(subject_df)
-    df_join=subject_df.join(df2,rsuffix='_caller')
-    df_join=df_join.join(df3)
-    df_join=df_join.drop(index=1,columns= ['id_caller', 'path'])
+    # df_join=subject_df.join(df2,rsuffix='_caller')
+    subject_df=subject_df.join(df3)
+    #
+    #
+    # df_join=df_join.drop(index=1,columns= ['id_caller', 'path'])
 
-    # show(df2,subject_df,df_join)
-    return df_join
+    subject_df=subject_df.astype(str)
+    subject_df=subject_df.rename(columns={"unit.name": "units","unit.value": "unitsV"})
+
+
+    return subject_df
 
 
 async def get_data_from_path(data_path='12,2'):
